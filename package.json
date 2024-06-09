@@ -1,0 +1,20 @@
+{
+  "name": "supabase-edge-functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "supabase": "supabase"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "supabase": "^1.169.8"
+  },
+  "dependencies": {
+    "deno": "^0.1.1",
+    "express": "^4.19.2"
+  }
+}
