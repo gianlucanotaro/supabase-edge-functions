@@ -3,6 +3,13 @@ import { createClient } from "npm:@supabase/supabase-js";
 const supabase = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_ANON_KEY")!);
 
 Deno.serve(async (req) => {
+  if (req.method !== "POST") {
+    return new Response(JSON.stringify({ error: "Method not allowed" }), {
+      headers: { "content-type": "application/json" },
+      status: 405,
+    });
+  }
+
   try {
     const { name, muscles_worked } = await req.json();
 
