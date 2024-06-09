@@ -12,7 +12,12 @@ Deno.serve(async (req) => {
 
   const { data: name, error } = await supabase.from("exercise").select('*');
 
-  console.log(name);
+  if (error) {
+    return new Response(JSON.stringify({ error: error.message }), {
+      headers: { "content-type": "application/json" },
+      status: 500,
+    });
+  }
 
   return new Response(JSON.stringify(name), {
     headers: { "content-type": "application/json" },
