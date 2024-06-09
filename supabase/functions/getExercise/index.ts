@@ -10,7 +10,7 @@ Deno.serve(async (req) => {
     });
   }
 
-  const { data: name, error } = await supabase.from("exercise").select('name').eq('id', 1).single();
+  const { data: name, error } = await supabase.from("exercise").select('*');
 
   console.log(name);
 
